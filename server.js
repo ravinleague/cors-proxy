@@ -26,8 +26,10 @@ app.all('*', function (req, res, next) {
         }
         if(targetURL.indexOf('.visitalexandrina.') > -1){
           targetURL = "https://www.visitalexandrina.com/events?format=feed&type=rss"
-        }else{
-            targetURL = targetURL
+        }
+        
+        if(targetURL.indexOf('willyweather') > -1){
+            targetURL = targetURL + "/weather.json?forecasts=weather&days=1"
         }
         
         request({ url: targetURL + req.url, method: req.method, json: req.body},
