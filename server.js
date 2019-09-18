@@ -19,7 +19,7 @@ app.all('*', function (req, res, next) {
         // CORS Preflight
         res.send();
     } else {
-        var targetURL = getParameterByName("targetUrl",request.query.targetUrl)
+        var targetURL = request.query.targetUrl
         console.log(targetURL)
         if (!targetURL) {
             res.send(500, { error: 'There is no Target-Endpoint header in the request' });
