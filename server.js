@@ -25,14 +25,16 @@ app.all('*', function (req, res, next) {
             return;
         }
         if(targetURL.indexOf('.visitalexandrina.') > -1){
+          console.log('The request is from events api...')
           targetURL = "https://www.visitalexandrina.com/events?format=feed&type=rss"
         }
         
         if(targetURL.indexOf('api.willyweather.com.au') > -1){
+            console.log('The request is from willyweather api...')
             targetURL = targetURL + "?forecasts=weather&days=1"
         }
         
-        console.log(targetURL)
+        
         request({ url: targetURL + req.url, method: req.method, json: req.body},
             function (error, response, body) {
                 if (error) {
