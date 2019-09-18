@@ -32,6 +32,7 @@ app.all('*', function (req, res, next) {
             targetURL = targetURL + "/weather.json?forecasts=weather&days=1"
         }
         
+        console.log(targetURL)
         request({ url: targetURL + req.url, method: req.method, json: req.body},
             function (error, response, body) {
                 if (error) {
