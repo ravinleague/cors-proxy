@@ -29,7 +29,7 @@ app.all('*', function (req, res, next) {
         }
         
         if(targetURL.indexOf('api.willyweather.com.au') > -1){
-            targetURL = targetURL + "/weather.json?forecasts=weather&days=1"
+            targetURL = targetURL + "?forecasts=weather&days=1"
         }
         
         console.log(targetURL)
