@@ -25,7 +25,7 @@ app.all('*', function (req, res, next) {
             return;
         }
         if(targetURL.indexOf('.visitalexandrina.') > -1){
-          targetURL += "?format=feed&type=rss"
+          targetURL = "https://www.visitalexandrina.com/events?format=feed&type=rss"
         }else{
             targetURL = targetURL
         }
