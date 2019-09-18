@@ -19,13 +19,17 @@ app.all('*', function (req, res, next) {
         // CORS Preflight
         res.send();
     } else {
-        console.log(req.query.targetUrl)
         var targetURL = req.query.targetUrl
-        console.log(targetURL)
         if (!targetURL) {
             res.send(500, { error: 'There is no Target-Endpoint header in the request' });
             return;
         }
+        if(targetURL.indexOf('visitalexandrina') > -1){
+          targetURL += "?format=feed&type=rss"
+        }else{
+            targetURL = targetURL
+        }
+        
         request({ url: targetURL + req.url, method: req.method, json: req.body},
             function (error, response, body) {
                 if (error) {
