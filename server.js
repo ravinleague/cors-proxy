@@ -24,7 +24,7 @@ app.all('*', function (req, res, next) {
             res.send(500, { error: 'There is no Target-Endpoint header in the request' });
             return;
         }
-        if(targetURL.indexOf('visitalexandrina') > -1){
+        if(targetURL.indexOf('.visitalexandrina.') > -1){
           targetURL += "?format=feed&type=rss"
         }else{
             targetURL = targetURL
