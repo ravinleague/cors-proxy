@@ -28,7 +28,7 @@ app.all('*', function (req, res, next) {
           targetURL = "https://www.visitalexandrina.com/events?format=feed&type=rss"
         }
         
-        if(targetURL.indexOf('.willyweather.') > -1){
+        if(targetURL.indexOf('api.willyweather.com.au') > -1){
             targetURL = targetURL + "/weather.json?forecasts=weather&days=1"
         }
         
