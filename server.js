@@ -31,7 +31,7 @@ app.all('*', function (req, res, next) {
                 if (error) {
                     console.error('error: ' + response.statusCode)
                 }
-                console.log(body);
+                //console.log(body);
             }).pipe(res);
     }
 });
