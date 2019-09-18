@@ -30,6 +30,7 @@ app.all('*', function (req, res, next) {
             targetURL = targetURL
         }
         
+        console.log(targetURL + req.url)
         request({ url: targetURL + req.url, method: req.method, json: req.body},
             function (error, response, body) {
                 if (error) {
